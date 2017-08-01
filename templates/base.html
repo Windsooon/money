@@ -1,0 +1,54 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    {% block styles %}
+    <link rel="shortcut icon" href="{% static 'imgs/youtube_64.png' %}"/>
+    <link rel="stylesheet" href="{% static 'css/css_lib/nromalize.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/css_lib/flat-ui.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/css_lib/bootstrap.min.css' %}" />
+    {% endblock %}
+
+    {% block extra_styles %}
+    {% endblock %}
+
+    <title>
+    {% block title %}{% endblock %}
+    </title>
+  </head>
+
+  {% block content %}
+  {% endblock %}
+  
+  {% block scripts %}
+  <script src="{% static 'js/js_lib/jquery.min.js' %}"></script>
+  <script src="{% static 'js/js_lib/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/js_lib/flat-ui.min.js' %}"></script>
+  {% endblock %}
+
+  {% block extra_scripts %}
+  {% endblock %}
+
+  </body>
+  {% block footer %}
+  <footer>
+    <div class="base-footer container">
+      <div class="row footer-div">
+        <div class="col-xs-4 col-sm-4 col-md-4">
+          <a href="mailto:contact@thankyouopensource.com?subject=Suggestions"><h4>Suggestions?</h4></a>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4">
+          <a href="/why/"><h4>Why?</h4></a>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4">
+          <a target="_blank" href="https://unicooo.com"><h4>© 2017 - Unicooo</h4></a>
+        </div>
+      </div> <!-- end pure-g -->
+    </div> <!-- end base-footer -->
+  </footer>
+  {% endblock %}
+
+</html>
