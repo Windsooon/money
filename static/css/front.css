@@ -45,24 +45,37 @@ pre {
 }
 
 .front-wrapper {
-    margin-top: 100px;
+    margin-top: 50px;
     text-align: center;
 }
 
 .nav-wrapper {
     height: 450px;
-    background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-image: url("../imgs/money.jpg");
 }
 
-.detect-form, .form-control {
+.detect-form > .form-control {
     border-radius: 6px 6px 0 0;
-    border: 0px;
     height: 60px;
 }
 
+.title-div {
+    border-radius: 20px;
+    background-color: black;
+    padding: 10px;
+}
+
 .detect-span {
+    color: #ffff66;
+    display: block;
+    font-size: 4vw;
+    font-weight: bold;
+}
+
+.detect-span-details {
     color: white;
-    font-size: 5vw;
+    font-size: 2.5vw;
+    text-shadow: 2px 2px 25px #555;
 }
 
 .coin-img {
@@ -75,5 +88,9 @@ pre {
 
 .check-btn {
     border-radius: 0 0 6px 6px;
-    background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+    background-image: linear-gradient(to bottom, #434343 0%, black 100%);
+}
+
+.second-form-div {
+    padding: 40px;
 }

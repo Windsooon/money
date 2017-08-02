@@ -12,11 +12,11 @@
   <div class="front-container container">
     <div class="front-row row">
       <div class="front-wrapper">
-        <div class="title-div">
-          <span class="detect-span">DID YOU OWE</span>
-          <img class="coin-img" src="{% static 'imgs/coin.png' %}" />
+        <div class="title-div col-xs-8 col-xs-offset-2 col-md-8 col-md-offset-2">
+          <span class="detect-span">DO YOU OWE MONEY?</span>
+          <span class="detect-span-details">Check if you owe your friends money</span>
         </div>
-        <div class="front-div col-xs-6 col-xs-offset-3 col-md-6 col-md-offset-3">
+        <div class="front-div col-xs-8 col-xs-offset-2 col-md-8 col-md-offset-2">
           <div class="detect-form form-group">
             <input type="email" value="" placeholder="Enter Your Email" class="form-control" />
             <button class="check-btn btn btn-danger btn-lg btn-block">CHECK NOW</button>
@@ -28,7 +28,20 @@
 </div> <!-- end nav-wrapper -->
 <div class="second-wrapper">
   <div class="second-container container">
-    <div class="second-row row">
+    <div class="second-row row col-xs-8 col-xs-offset-2 col-md-8 col-md-offset-2">
+      <div class="second-form-div">
+        <form class="second-form">
+          <div class="form-group">
+            <input type="email" class="form-control" placeholder="Email input" />
+          </div> <!-- end form-group -->
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="How much " />
+          </div> <!-- end form-group -->
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Why and When " />
+          </div> <!-- end form-group -->
+        </form>
+      </div> <!-- end second-form-div -->
     </div> <!-- end second-row -->
   </div> <!-- end second-container -->
 </div> <!-- end second-wrapper -->
