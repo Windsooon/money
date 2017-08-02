@@ -2,16 +2,36 @@
 {% load staticfiles %}
 
 {% block extra_styles %}
-
+<link rel="stylesheet" href="{% static 'css/front.css' %}" />
 {% endblock %}
 
-{% block title %}Thank You Open Source{% endblock %} 
+{% block title %}Who Owe You Money?{% endblock %} 
 
 {% block content %}
-<div class="editor-container container">
-  <div class="editor-row row">
-  </div> <!-- end editor-row -->
-</div> <!-- end editor-container -->
+<div class="nav-wrapper">
+  <div class="front-container container">
+    <div class="front-row row">
+      <div class="front-wrapper">
+        <div class="title-div">
+          <span class="detect-span">DID YOU OWE</span>
+          <img class="coin-img" src="{% static 'imgs/coin.png' %}" />
+        </div>
+        <div class="front-div col-xs-6 col-xs-offset-3 col-md-6 col-md-offset-3">
+          <div class="detect-form form-group">
+            <input type="email" value="" placeholder="Enter Your Email" class="form-control" />
+            <button class="check-btn btn btn-danger btn-lg btn-block">CHECK NOW</button>
+          </div> <!-- end detect-form -->
+        </div> <!-- end front-div -->
+      </div> <!-- end front-wrapper -->
+    </div> <!-- end front-row -->
+  </div> <!-- end front-container -->
+</div> <!-- end nav-wrapper -->
+<div class="second-wrapper">
+  <div class="second-container container">
+    <div class="second-row row">
+    </div> <!-- end second-row -->
+  </div> <!-- end second-container -->
+</div> <!-- end second-wrapper -->
 {% endblock %}
 
 {% block extra_scripts %}
