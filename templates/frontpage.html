@@ -17,9 +17,12 @@
         </div>
         <div class="front-div col-xs-8 col-xs-offset-2 col-md-8 col-md-offset-2">
           <div class="detect-form form-group">
-            <input type="email" value="" placeholder="Enter Your Email" class="form-control" />
-            <button class="check-btn btn btn-danger btn-lg btn-block">CHECK NOW</button>
+            <input type="text" value="" placeholder="Enter Your Name    (We use your name to notice your firends.)" id="check-name" class="form-control" />
+          </div>
+          <div class="detect-form form-group">
+            <input type="email" value="" placeholder="Enter Your Email    (We will not send spam emails.)" id="check-email" class="form-control" />
           </div> <!-- end detect-form -->
+            <button class="check-btn btn btn-danger btn-lg btn-block">CHECK NOW</button>
         </div> <!-- end front-div -->
       </div> <!-- end front-wrapper -->
     </div> <!-- end front-row -->
@@ -47,4 +50,13 @@
 {% endblock %}
 
 {% block extra_scripts %}
+<script src="{% static 'js/frontpage.js' %}"></script>
+<script>
+    $(document).ready(function(){
+        $(".check-btn").on("click", function(){
+            var email = $("#check-email").val();
+            submit_check(email); 
+        });
+    });  
+</script>
 {% endblock %}
