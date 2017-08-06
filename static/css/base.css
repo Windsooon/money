@@ -1,3 +1,7 @@
+.clear {
+    clear: both;
+}
+
 .footer-div {
     text-align: center;
 }

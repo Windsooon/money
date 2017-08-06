@@ -30,17 +30,17 @@
 </div> <!-- end nav-wrapper -->
 <div class="intro container">
   <div class="row">
-    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
       <img class="intro-img rounded-circle" src="{% static 'imgs/dollar.png' %}" alt="dollar" />
       <h2 class="intro-span-title">CHECK</h2>
       <p class="intro-span-p">Search your favor repository on GitHub.</p>
     </div><!-- /.col-lg-4 -->
-    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
       <img class="intro-img rounded-circle" src="{% static 'imgs/networking.png' %}" alt="networking" />
       <h2 class="intro-span-title">ADD</h2>
       <p class="intro-span-p">Write thank you letter to maintainer with love.</p>
     </div><!-- /.col-lg-4 -->
-    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
       <img class="intro-img rounded-circle" src="{% static 'imgs/twitter.png' %}" alt="twitter" />
       <h2 class="intro-span-title">SHARE</h2>
       <p class="intro-span-p">Post it to the world and share it to your friend.</p>
@@ -54,8 +54,9 @@
 <script>
     $(document).ready(function(){
         $(".check-btn").on("click", function(){
+            var name = $("#check-name").val();
             var email = $("#check-email").val();
-            submit_check(email); 
+            submit_check(name, email); 
         });
     });  
 </script>

@@ -56,8 +56,8 @@ pre {
     margin-bottom: 60px;
 }
 
-.detect-form > .form-control {
-    height: 60px;
+.form-control {
+    height: 50px;
 }
 
 .title-div {
@@ -69,7 +69,8 @@ pre {
 .detect-span {
     color: #FDD87F;
     display: block;
-    font-size: 5vw;
+    white-space: nowrap;
+    font-size: 3.5vw;
     font-weight: bold;
     background-color: black;
     box-shadow: 12px 12px 0px #555;
@@ -123,4 +124,13 @@ pre {
 .front-div {
     padding: 25px;
     background: rgba(237, 239, 241, 1);
+}
+
+.money-span {
+    font-size: 18vw;
+    color: #555;
+}
+
+.money-div {
+    background: white;
 }

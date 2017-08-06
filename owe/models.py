@@ -7,7 +7,7 @@ class Owe(models.Model):
         Lend, related_name="owe", on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     email = models.EmailField()
-    money = models.CharField(max_length=100)
+    money = models.IntegerField()
     reason = models.CharField(max_length=100)
     create_time = models.DateTimeField(auto_now_add=True)
     update_time = models.DateTimeField(auto_now=True)

@@ -14,7 +14,7 @@ def email(request):
     name = request.POST.get('name', None)
     email = request.POST.get('email', None)
     if email and name:
-        Lend.objects.get_or_create(name=name, email=email)
+        Lend.objects.get_or_create(email=email)
         owe = Owe.objects.filter(email=email)
         owe_money = 0
         if owe:
