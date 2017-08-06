@@ -44,20 +44,17 @@ function owe_money(container, money) {
            "text": money
        });
 
-    var $money_a = $("<a />", {
-           "class": "money-span twitter-share-button",
-           "href": "https://twitter.com/share",
-           "data-show-count": "false",
-           "text": "Add your friend to notice you",
+    var $money_owe = $("<button />", {
+           "class": "check-btn money-owe btn btn-danger btn-lg btn-block",
+           "text": "Add friends who owe your money."
        });
-    
-    $money_a.css("font-size", "2vw");
+
     container.append($title_div);  
     $title_div.append($detect_span);
     container.append($title_clear);  
     container.append($money_div);  
     $money_div.append($money_span);
-    $money_div.append($money_a);
+    $money_div.append($money_owe);
 }
 
 function show_owe_form(container) {

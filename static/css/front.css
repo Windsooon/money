@@ -127,14 +127,19 @@ pre {
 }
 
 .money-span {
-    font-size: 14vw;
+    font-size: 12vw;
     color: #555;
 }
 
 .money-div {
     background: white;
+    padding: 20px;
 }
 
 .money-span {
     display: block;
+}
+
+.first-icon, .second-icon, .third-icon {
+    padding: 50px;
 }
