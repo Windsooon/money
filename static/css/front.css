@@ -1,9 +1,9 @@
 .nav-wrapper {
-    height: 90vh;
-    padding-top: 150px;
+    height: 100vh;
 }
 
 .front-wrapper {
+    overflow: hidden;
     text-align: center;
 }
 
@@ -11,20 +11,30 @@
     height: 50px;
 }
 
+.front-container {
+    margin-top: 80px;
+}
+
 .title-div {
-    border-radius: 20px;
     padding: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 50px;
 }
 
 .detect-span {
-    color: #FDD87F;
+    color: white;
     display: block;
     white-space: nowrap;
-    font-size: 3.5vw;
-    font-weight: bold;
-    background-color: black;
-    box-shadow: 10px 10px 0px #555;
+    font-size: 4vw;
+    font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    margin-bottom: 20px;
+}
+
+.details-span {
+    font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.5vw;
+    color: white;
+    font-weight: 100;
 }
 
 .detect-span-details {
@@ -80,4 +90,8 @@
 
 .first-icon, .second-icon, .third-icon {
     padding: 50px;
+}
+
+.check-btn {
+    margin-right: 10px;
 }

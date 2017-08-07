@@ -1,12 +1,22 @@
 @import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
 
 .nav-wrapper { 
-  background-image: url("../imgs/money.jpg"); 
+  background-image: url("../imgs/home.jpg"); 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.base-navbar {
+  background:none !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: white;
+  font-weight: 100;
 }
 
 body {
@@ -59,8 +69,4 @@ pre {
 
 .footer-div {
     text-align: center;
-}
-
-footer {
-    height: 10vh;
 }
