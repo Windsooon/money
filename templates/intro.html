@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block extra_styles %}
+<link rel="stylesheet" href="{% static 'css/intro.css' %}" />
+{% endblock %}
+
+{% block title %}Who Owe You Money?{% endblock %} 
+
+{% block content %}
+<div class="intro container">
+  <div class="row">
+    <div class="first-icon col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <img class="intro-img rounded-circle" src="{% static 'imgs/dollar.png' %}" alt="dollar" />
+      </div> <!-- end col-xs-6 -->
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <h2 class="intro-span-title">CHECK</h2>
+        <p class="intro-span-p">Search your favor repository on GitHub.</p>
+      </div> <!-- end col-xs-6 -->
+    </div> <!-- end first-icon -->
+    <div class="second-icon col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <h2 class="intro-span-title">ADD</h2>
+        <p class="intro-span-p">Write thank you letter to maintainer with love.</p>
+      </div> <!-- end col-xs-6 -->
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <img class="intro-img rounded-circle" src="{% static 'imgs/networking.png' %}" alt="networking" />
+      </div> <!-- end col-xs-6 -->
+    </div> <!-- end second-icon -->
+    <div class="third-icon col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <img class="intro-img rounded-circle" src="{% static 'imgs/twitter.png' %}" alt="twitter" />
+      </div> <!-- end col-xs-6 -->
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <h2 class="intro-span-title">SHARE</h2>
+        <p class="intro-span-p">Post it to the world and share it to your friend.</p>
+      </div> <!-- end col-xs-6 -->
+    </div><!-- end third-icon -->
+  </div><!-- /.row -->
+</div><!-- end intro -->
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{% static 'js/frontpage.js' %}"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script>
+</script>
+{% endblock %}

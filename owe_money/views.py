@@ -10,6 +10,12 @@ def frontpage(request):
     )
 
 
+def how(request):
+    return render(
+        request, 'intro.html',
+    )
+
+
 def email(request):
     name = request.POST.get('name', None)
     email = request.POST.get('email', None)
@@ -23,4 +29,3 @@ def email(request):
         return HttpResponse(owe_money)
     else:
         return HttpResponse(status=400)
-
