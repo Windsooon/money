@@ -14,8 +14,15 @@ class LendViewSet(viewsets.ModelViewSet):
 
 
 class OweViewSet(viewsets.ModelViewSet):
-    queryset = Owe.objects.all()
     serializer_class = OweSerializer
+
+    def get_queryset(self):
+        queryset = Owe.objects.all()
+
+        email = self.request.query_params.get('email', None)
+        if email is not None:
+            queryset = queryset.filter(email=email)
+        return queryset
 
 
 @api_view(['GET'])
