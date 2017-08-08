@@ -10,7 +10,6 @@ function submit_check(name, email) {
                 $('.check-btn').prop('disabled', true);
             },
 		success:function(data){
-            $(".front-wrapper").empty();
             owe_money($(".front-wrapper"), data);
         },
         error: function(data) {
@@ -22,39 +21,6 @@ function submit_check(name, email) {
 }
 
 function owe_money(container, money) {
-    var $title_div = $("<div />", {
-           "class": "title-div col-xs-8 col-xs-offset-2 col-md-8 col-md-offset-2"
-       });
-
-    var $detect_span = $("<span />", {
-           "class": "detect-span",
-           "text": "YOU CURRENT OWE"
-       });
-
-    var $title_clear = $("<div />", {
-           "class": "clear"
-       });
-    
-    var $money_div = $("<div />", {
-           "class": "money-div col-xs-8 col-xs-offset-2 col-md-8 col-md-offset-2"
-       });
-
-    var $money_span = $("<span />", {
-           "class": "money-span",
-           "text": money
-       });
-
-    var $money_owe = $("<button />", {
-           "class": "check-btn money-owe btn btn-danger btn-lg btn-block",
-           "text": "Add friends who owe your money."
-       });
-
-    container.append($title_div);  
-    $title_div.append($detect_span);
-    container.append($title_clear);  
-    container.append($money_div);  
-    $money_div.append($money_span);
-    $money_div.append($money_owe);
 }
 
 function show_owe_form(container) {

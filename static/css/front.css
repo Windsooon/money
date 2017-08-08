@@ -12,21 +12,20 @@
 }
 
 .front-container {
-    margin-top: 80px;
+    margin-top: 50px;
 }
 
 .title-div {
     padding: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
 .detect-span {
-    color: white;
+    color: #fff392;
     display: block;
     white-space: nowrap;
     font-size: 4vw;
-    font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 100;
+    font-weight: 700;
     margin-bottom: 20px;
 }
 
