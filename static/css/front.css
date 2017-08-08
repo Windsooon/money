@@ -29,6 +29,14 @@
     margin-bottom: 20px;
 }
 
+.detect-money {
+    color: white;
+    font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12vw;
+    font-weight: 100;
+    white-space: nowrap;
+}
+
 .details-span {
     font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 1.5vw;

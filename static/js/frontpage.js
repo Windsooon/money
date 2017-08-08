@@ -10,7 +10,9 @@ function submit_check(name, email) {
                 $('.check-btn').prop('disabled', true);
             },
 		success:function(data){
-            owe_money($(".front-wrapper"), data);
+            $(".front-wrapper").empty();
+            get_owe_money(data["email"]);
+            // owe_money($(".front-wrapper"), data);
         },
         error: function(data) {
         },
@@ -20,7 +22,39 @@ function submit_check(name, email) {
     });
 }
 
+function get_owe_money(email) {
+    $.ajax({
+        url: "/api/owe/?email=" + email,
+        type: "GET",
+        dataType: "JSON",
+		success:function(data){
+            console.log(data);
+        },
+        error: function(data) {
+        },
+    });
+}
+
 function owe_money(container, money) {
+    var $title_div = $("<div />", {
+           "class": "title-div col-xs-8 col-xs-offset-2 col-md-8 col-md-offset-2"
+       });
+    var $detect_span = $("<span />", {
+           "class": "detect-span",
+           "text": "You Totally Owe"
+       });
+    var $detect_money = $("<span />", {
+           "class": "detect-money",
+           "text": "$ " + money.toLocaleString('en'),
+       });
+    $title_div.append($detect_span);
+    $title_div.append($detect_money);
+    container.append($title_div);
+
+    var $owe_div = $("<div />", {
+           "class": "owe-div col-xs-8 col-xs-offset-2 col-md-8 col-md-offset-2"
+       });
+    container.append($owe_div);
 }
 
 function show_owe_form(container) {
