@@ -44,7 +44,7 @@
     <div class="front-row row">
       <div class="front-wrapper">
         <div class="title-div col-xs-8 col-xs-offset-2 col-md-8 col-md-offset-2">
-            <span class="detect-span">DO YOU OWE <br>FIREND'S MONEY?</span>
+            <span class="detect-span"></span>
             <span class="details-span">Build beautiful, contemporary sites in just moments <br>
 with Foundry and Variant Page Builder.</span>
         </div>
@@ -68,8 +68,16 @@ with Foundry and Variant Page Builder.</span>
 
 {% block extra_scripts %}
 <script src="{% static 'js/frontpage.js' %}"></script>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <script>
+    var typed3 = new Typed('.detect-span', {
+        strings: [
+            'I Owe John <i>100 dollars</i> ?', 'I Owe Vincent <i>200 dollars</i> ?',
+        ],
+        typeSpeed: 70,
+        backSpeed: 40,
+        smartBackspace: true, // this is a default
+    });
+
     $(document).ready(function(){
         $(".check-btn").on("click", function(){
             var name = $("#check-name").val();
