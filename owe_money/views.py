@@ -17,9 +17,8 @@ def how(request):
 
 
 def email(request):
-    name = request.POST.get('name', None)
     email = request.POST.get('email', None)
-    if email and name:
+    if email:
         Lend.objects.get_or_create(email=email)
         return JsonResponse({'email': email})
     else:

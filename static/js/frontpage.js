@@ -4,7 +4,7 @@ function submit_check(name, email) {
         url: "/email/",
         type: "POST",
         dataType: "JSON",
-        data: {"name": name, "email": email},
+        data: {"email": email},
         beforeSend: function(xhr) {
                 xhr.setRequestHeader("X-CSRFToken", csrftoken)
                 $('.check-btn').prop('disabled', true);
