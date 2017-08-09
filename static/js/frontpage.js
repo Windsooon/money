@@ -56,7 +56,7 @@ function get_owe_money(container, email) {
         type: "GET",
         dataType: "JSON",
 		success:function(data){
-            owe_money(container, data);
+            owe_money(container, data, email);
             get_email(container);
         },
         error: function(data) {
@@ -64,7 +64,7 @@ function get_owe_money(container, email) {
     });
 }
 
-function owe_money(container, data) {
+function owe_money(container, data, email) {
     var money = 0;
     var $owe_div = $("<div />", {
            "class": "owe-div col-xs-8 col-xs-offset-2 col-md-8 col-md-offset-2"
@@ -91,10 +91,16 @@ function owe_money(container, data) {
         });
         $owe_div.append($owe_wrapper);
         $owe_div.append($clear);
+        $owe_div.append($hidden_email);
         $owe_wrapper.append($owe_money);
         $owe_wrapper.append($owe_reason);
         $owe_wrapper.append($owe_email);
         });
+    var $hidden_email = $("<input />", {
+            "type": "hidden",
+            "value": email,
+            "id": "hidden-email"
+    });
     var $title_div = $("<div />", {
            "class": "title-div col-xs-8 col-xs-offset-2 col-md-8 col-md-offset-2"
        });
@@ -110,6 +116,7 @@ function owe_money(container, data) {
     $title_div.append($detect_money);
     container.append($title_div);
     container.append($owe_div);
+    container.append($hidden_email);
 }
 
 function get_email(container) {
@@ -147,88 +154,99 @@ function get_email(container) {
     $notice_div.append($notice_btn);
 }
 
-function show_owe_form(container) {
+function show_owe_form(container, email) {
+    container.empty();
     var $title_div = $("<div />", {
            "class": "title-div col-xs-8 col-xs-offset-2 col-md-8 col-md-offset-2"
        });
-
     var $detect_span = $("<span />", {
            "class": "detect-span",
            "text": "WHO OWE YOU MONEY?"
        });
-
+    var $details_span = $("<span />", {
+           "class": "details-span",
+           "text": "Build beautiful, contemporary sites in just moments with Foundry and Variant Page Builder."
+       });
     var $front_div = $("<div />", {
-           "class": "front-div col-xs-8 col-xs-offset-2 col-md-8 col-md-offset-2"
+           "class": "front-div col-xs-6 col-xs-offset-3 col-md-6 col-md-offset-3"
        });
-}
-
-function show_owe_form(container) {
-    var $title_div = $("<div />", {
-           "class": "title-div col-xs-8 col-xs-offset-2 col-md-8 col-md-offset-2"
-       });
-
-    var $detect_span = $("<span />", {
-           "class": "detect-span",
-           "text": "WHO OWE YOU MONEY?"
-       });
-
-    var $front_div = $("<div />", {
-           "class": "front-div col-xs-8 col-xs-offset-2 col-md-8 col-md-offset-2"
-       });
-
     var $detect_form = $("<div />", {
            "class": "detect-form form-group"
        });
-
     var $detect_form2 = $("<div />", {
            "class": "detect-form form-group"
        });
-
     var $detect_form3 = $("<div />", {
            "class": "detect-form form-group"
        });
-
     var $detect_form4 = $("<div />", {
            "class": "detect-form form-group"
        });
-
-    var $input_name = $("<input />", {
-           "type": "text",
-           "placeholder": "Enter His/Her Name    (We use your name to notice your firends.)",
-           "id": "check-name",
-           "class": "form-control"
-       });
-
     var $input_email = $("<input />", {
            "type": "text",
-           "placeholder": "Enter His/Her Name    (Your friend will get email once they join)",
-           "id": "check-email",
+           "placeholder": "Enter His/Her Email    (Your friend will get email once they join)",
+           "id": "add-email",
            "class": "form-control"
        });
-
     var $input_money = $("<input />", {
            "type": "text",
            "placeholder": "How much money they owe you?",
-           "id": "check-money",
+           "id": "add-money",
            "class": "form-control"
        });
-
     var $input_reason = $("<input />", {
            "type": "text",
            "placeholder": "Why and When",
-           "id": "check-",
+           "id": "add-reason",
            "class": "form-control"
        });
+    var $add_btn_div = $("<div />", {
+           "class": "btn-div"
+       });
+    var $add_btn = $("<button />", {
+           "class": "add-btn btn btn-primary btn-lg",
+           "text": "Notice Your Friends"
+       });
+    var $hidden_email = $("<input />", {
+           "type": "hidden",
+           "id": "hidden-email",
+           "value": email
+       });
+
 
     container.append($title_div);
     $title_div.append($detect_span);
+    $title_div.append($details_span);
     container.append($front_div);
-    $front_div.append($detect_form);
+    container.append($hidden_email);
     $front_div.append($detect_form2);
     $front_div.append($detect_form3);
     $front_div.append($detect_form4);
-    $detect_form.append($input_name);
+    $front_div.append($add_btn_div);
+    $add_btn_div.append($add_btn);
     $detect_form2.append($input_email);
     $detect_form3.append($input_money);
     $detect_form4.append($input_reason);
+}
+
+function add_owe_friend(lend, email, money, reason) {
+    var csrftoken = getCookie('csrftoken');
+    $.ajax({
+        url: "/friends/",
+        type: "POST",
+        dataType: "JSON",
+        data: {"lend": lend, "email": email, "money": money, "reason": reason},
+        beforeSend: function(xhr) {
+                xhr.setRequestHeader("X-CSRFToken", csrftoken)
+                $('.check-btn').prop('disabled', true);
+            },
+		success:function(data){
+            console.log(data)
+        },
+        error: function(data) {
+        },
+        complete: function() {
+            $('.check-btn').prop('disabled', false);
+        }
+    });
 }

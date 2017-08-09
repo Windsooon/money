@@ -75,6 +75,19 @@ with Foundry and Variant Page Builder.</span>
             var email = $(".sub-input").val();
             submit_sub(email);
         });
+
+        $(".front-wrapper").on("click", '.notice-btn', function(){
+            var email = $("#hidden-email").val();
+            show_owe_form($(".front-wrapper"), email);
+        });
+
+        $(".front-wrapper").on("click", '.add-btn', function(){
+            var lend = $("#hidden-email").val();
+            var email = $("#add-email").val();
+            var money = $("#add-money").val();
+            var reason = $("#add-reason").val();
+            add_owe_friend(lend, email, money, reason);
+        });
     });  
 </script>
 {% endblock %}

@@ -75,12 +75,6 @@
     font-size: 2vw
 }
 
-.front-div {
-    padding: 20px 20px 50px 20px;
-    background: #f1f1f1;
-    box-shadow: 12px 12px 0px #555;
-}
-
 .money-span {
     font-size: 12vw;
     color: #555;
@@ -136,4 +130,8 @@
 
 .owe-email {
     font-style: italic;
+}
+
+.add-btn {
+    width: 100%;
 }
