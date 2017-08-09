@@ -102,3 +102,38 @@
 .check-btn {
     margin-right: 10px;
 }
+
+.owe-span, .notice-label {
+    display: block;
+    color: white;
+    font-size: 3vw;
+    font-weight: 100;
+}
+
+.sub-div {
+    margin-top: 40px;
+}
+
+.sub-input {
+    border-radius: 6px 6px 0px 0px;
+}
+
+.sub-btn {
+    border-radius: 0px 0px 6px 6px;
+}
+
+.notice-div {
+    margin-top: 40px;
+}
+
+.notice-btn {
+    background-color: #F39C12;
+}
+
+.owe-reason {
+    color: #d4d4d4;
+}
+
+.owe-email {
+    font-style: italic;
+}

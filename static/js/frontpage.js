@@ -11,8 +11,7 @@ function submit_check(name, email) {
             },
 		success:function(data){
             $(".front-wrapper").empty();
-            get_owe_money(data["email"]);
-            // owe_money($(".front-wrapper"), data);
+            get_owe_money($(".front-wrapper"), data["email"]);
         },
         error: function(data) {
         },
@@ -22,20 +21,51 @@ function submit_check(name, email) {
     });
 }
 
-function get_owe_money(email) {
+function get_owe_money(container, email) {
     $.ajax({
         url: "/api/owe/?email=" + email,
         type: "GET",
         dataType: "JSON",
 		success:function(data){
-            console.log(data);
+            owe_money(container, data);
+            get_email(container);
         },
         error: function(data) {
         },
     });
 }
 
-function owe_money(container, money) {
+function owe_money(container, data) {
+    var money = 0;
+    var $owe_div = $("<div />", {
+           "class": "owe-div col-xs-8 col-xs-offset-2 col-md-8 col-md-offset-2"
+       });
+    $.each(data["results"], function(k, v){
+        money += v["money"];
+        var $owe_wrapper = $("<div />", {
+               "class": "owe-wrapper",
+           });
+        var $owe_money = $("<span />", {
+               "class": "owe-span",
+               "text": "$" + v["money"].toLocaleString('en')
+           });
+        var $owe_email = $("<span />", {
+               "class": "owe-email",
+               "text": "by " + v["lend_email"],
+           });
+        var $owe_reason = $("<span />", {
+               "class": "owe-reason",
+               "text": '"' + v["reason"] + '"' + "\xa0\xa0",
+           });
+        var $clear = $("<div />", {
+                "class": "clear",
+        });
+        $owe_div.append($owe_wrapper);
+        $owe_div.append($clear);
+        $owe_wrapper.append($owe_money);
+        $owe_wrapper.append($owe_reason);
+        $owe_wrapper.append($owe_email);
+        });
     var $title_div = $("<div />", {
            "class": "title-div col-xs-8 col-xs-offset-2 col-md-8 col-md-offset-2"
        });
@@ -50,11 +80,57 @@ function owe_money(container, money) {
     $title_div.append($detect_span);
     $title_div.append($detect_money);
     container.append($title_div);
-
-    var $owe_div = $("<div />", {
-           "class": "owe-div col-xs-8 col-xs-offset-2 col-md-8 col-md-offset-2"
-       });
     container.append($owe_div);
+}
+
+function get_email(container) {
+    var $sub_div = $("<div />", {
+        "class": "sub-div form-group col-xs-6 col-xs-offset-3 col-md-6 col-md-offset-3",
+    });
+    var $sub_input = $("<input />", {
+        "type": "email",
+        "placeholder": "your@email.com",
+        "class": "sub-input form-control",
+    });
+    var $sub_btn = $("<button />", {
+        "class": "sub-btn btn btn-primary btn-lg btn-block",
+        "text": "Get Email When You Owe Money"
+    });
+
+    container.append($sub_div);
+    $sub_div.append($sub_input);
+    $sub_div.append($sub_btn);
+    // add notice button 
+    var $notice_div = $("<div />", {
+        "class": "notice-div form-group col-xs-6 col-xs-offset-3 col-md-6 col-md-offset-3",
+    });
+    var $notice_label = $("<label />", {
+        "class": "notice-label",
+        "text": "One More Thing"
+    });
+    var $notice_btn = $("<button />", {
+        "class": "notice-btn btn btn-warning btn-lg btn-block",
+        "text": "+  Friends Who Owe Your Money"
+    });
+
+    container.append($notice_div);
+    $notice_div.append($notice_label);
+    $notice_div.append($notice_btn);
+}
+
+function show_owe_form(container) {
+    var $title_div = $("<div />", {
+           "class": "title-div col-xs-8 col-xs-offset-2 col-md-8 col-md-offset-2"
+       });
+
+    var $detect_span = $("<span />", {
+           "class": "detect-span",
+           "text": "WHO OWE YOU MONEY?"
+       });
+
+    var $front_div = $("<div />", {
+           "class": "front-div col-xs-8 col-xs-offset-2 col-md-8 col-md-offset-2"
+       });
 }
 
 function show_owe_form(container) {
