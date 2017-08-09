@@ -8,7 +8,7 @@ class OweSerializer(serializers.ModelSerializer):
     class Meta:
         model = Owe
         fields = (
-            'id', 'lend_email', 'email',
+            'id', 'lend', 'lend_email', 'email',
             'money', 'reason',
         )
 
