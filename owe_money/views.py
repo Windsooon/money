@@ -23,3 +23,15 @@ def email(request):
         return JsonResponse({'email': email})
     else:
         return HttpResponse(status=400)
+
+
+def sub_email(request):
+    email = request.POST.get('email', None)
+    if email:
+        obj, created = Lend.objects.update_or_create(
+            email=email,
+            defaults={'notice': 1},
+        )
+        return JsonResponse({'email': obj.email, 'notice': obj.notice})
+    else:
+        return HttpResponse(status=400)

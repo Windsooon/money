@@ -9,5 +9,5 @@ class LendSerializer(serializers.ModelSerializer):
     class Meta:
         model = Lend
         fields = (
-            'id', 'email', 'owe',
+            'id', 'email', 'notice', 'owe',
         )

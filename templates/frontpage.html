@@ -67,9 +67,13 @@ with Foundry and Variant Page Builder.</span>
 
     $(document).ready(function(){
         $(".check-btn").on("click", function(){
-            var name = $("#check-name").val();
             var email = $("#check-email").val();
-            submit_check(name, email); 
+            submit_check(email); 
+        });
+
+        $(".front-wrapper").on("click", '.sub-btn', function(){
+            var email = $(".sub-input").val();
+            submit_sub(email);
         });
     });  
 </script>

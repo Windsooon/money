@@ -1,5 +1,12 @@
-function submit_check(name, email) {
+function submit_check(email) {
     var csrftoken = getCookie('csrftoken');
+    if (email.length == 0) {
+        return false; 
+    }
+    if (!isValidEmailAddress(email)) {
+        alert("Please submit a correct email address"); 
+        return false;
+    }
     $.ajax({
         url: "/email/",
         type: "POST",
@@ -19,6 +26,28 @@ function submit_check(name, email) {
             $('.check-btn').prop('disabled', false);
         }
     });
+}
+
+function submit_sub(email) {
+    var csrftoken = getCookie('csrftoken');
+    $.ajax({
+        url: "/sub_email/",
+        type: "POST",
+        dataType: "JSON",
+        data: {"email": email},
+        beforeSend: function(xhr) {
+                xhr.setRequestHeader("X-CSRFToken", csrftoken)
+                $('.sub-btn').prop('disabled', true);
+            },
+		success:function(data){
+            $('.sub-btn').text("Got it!");
+        },
+        error: function(data) {
+        },
+        complete: function() {
+            $('.sub-btn').prop('disabled', false);
+        }
+    }); 
 }
 
 function get_owe_money(container, email) {
