@@ -27,6 +27,10 @@ function submit_check(email) {
 
 function submit_sub(email) {
     var csrftoken = getCookie('csrftoken');
+    if (email.length == 0 | !isValidEmailAddress(email)) {
+        alert("Please submit a correct email address"); 
+        return false; 
+    }
     $.ajax({
         url: "/sub_email/",
         type: "POST",
@@ -213,6 +217,10 @@ function show_owe_form(container, email) {
            "id": "hidden-email",
            "value": email
        });
+    var $twitter_a = $("<a />", {
+           "href": "https://twitter.com/intent/tweet?button_hashtag=TwitterStories&hashtags=TBT,FF",
+           "text": "Tweet #TwitterStories"
+       });
 
 
     container.append($title_div);
@@ -225,6 +233,7 @@ function show_owe_form(container, email) {
     $front_div.append($detect_form4);
     $front_div.append($add_btn_div);
     $add_btn_div.append($add_btn);
+    $add_btn_div.append($twitter_a);
     $detect_form2.append($input_email);
     $detect_form3.append($input_money);
     $detect_form4.append($input_reason);
@@ -242,7 +251,6 @@ function add_owe_friend(lend, email, money, reason) {
                 $('.add-btn').prop('disabled', true);
             },
 		success:function(data){
-            console.log(data);
             $('.add-btn').text("Got it!");
         },
         error: function(data) {
