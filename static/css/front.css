@@ -12,7 +12,7 @@
 }
 
 .front-container {
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 .title-div {
@@ -23,7 +23,6 @@
 .detect-span {
     color: #fff392;
     display: block;
-    white-space: nowrap;
     font-size: 5vw;
     font-weight: 700;
     margin-bottom: 20px;
