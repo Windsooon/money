@@ -1,11 +1,8 @@
 function submit_check(email) {
     var csrftoken = getCookie('csrftoken');
-    if (email.length == 0) {
-        return false; 
-    }
-    if (!isValidEmailAddress(email)) {
+    if (email.length == 0 | !isValidEmailAddress(email)) {
         alert("Please submit a correct email address"); 
-        return false;
+        return false; 
     }
     $.ajax({
         url: "/email/",
@@ -160,8 +157,12 @@ function show_owe_form(container, email) {
            "class": "title-div col-xs-8 col-xs-offset-2 col-md-8 col-md-offset-2"
        });
     var $detect_span = $("<span />", {
-           "class": "detect-span",
-           "text": "WHO OWE YOU MONEY?"
+           "class": "add-friend-span",
+           "text": "WHO OWE " + email + " MONEY?"
+       });
+    var $detect_email = $("<span />", {
+           "class": "detect-email",
+           "text": email
        });
     var $details_span = $("<span />", {
            "class": "details-span",

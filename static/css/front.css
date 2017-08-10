@@ -12,7 +12,7 @@
 }
 
 .front-container {
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .title-div {
@@ -29,10 +29,18 @@
     margin-bottom: 20px;
 }
 
+.add-friend-span {
+    color: #fff392;
+    display: block;
+    font-size: 5vw;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
 .detect-money {
     color: white;
     font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 12vw;
+    font-size: 10vw;
     font-weight: 100;
     white-space: nowrap;
 }
@@ -105,7 +113,7 @@
 }
 
 .sub-div {
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .sub-input {
@@ -118,6 +126,7 @@
 
 .notice-div {
     margin-top: 40px;
+    margin-bottom: 50px;
 }
 
 .notice-btn {
@@ -134,4 +143,8 @@
 
 .add-btn {
     width: 100%;
+}
+
+.front-div {
+    margin-bottom: 50px;
 }
