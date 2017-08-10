@@ -70,6 +70,6 @@ pre {
     clear: both;
 }
 
-.footer-div {
-    text-align: center;
+.navbar-brand {
+    color: white !important;
 }

@@ -165,7 +165,7 @@ function show_owe_form(container, email) {
        });
     var $details_span = $("<span />", {
            "class": "details-span",
-           "text": "Build beautiful, contemporary sites in just moments with Foundry and Variant Page Builder."
+           "text": "Notice your friends they owe you money in a polite way."
        });
     var $front_div = $("<div />", {
            "class": "front-div col-xs-6 col-xs-offset-3 col-md-6 col-md-offset-3"
@@ -238,15 +238,16 @@ function add_owe_friend(lend, email, money, reason) {
         data: {"lend": lend, "email": email, "money": money, "reason": reason},
         beforeSend: function(xhr) {
                 xhr.setRequestHeader("X-CSRFToken", csrftoken)
-                $('.check-btn').prop('disabled', true);
+                $('.add-btn').prop('disabled', true);
             },
 		success:function(data){
-            console.log(data)
+            console.log(data);
+            $('.add-btn').text("Got it!");
         },
         error: function(data) {
         },
         complete: function() {
-            $('.check-btn').prop('disabled', false);
+            $('.add-btn').prop('disabled', false);
         }
     });
 }
