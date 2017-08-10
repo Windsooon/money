@@ -118,7 +118,7 @@ function owe_money(container, data, email) {
 
 function get_email(container) {
     var $sub_div = $("<div />", {
-        "class": "sub-div form-group col-xs-6 col-xs-offset-3 col-md-6 col-md-offset-3",
+        "class": "sub-div form-group col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-3",
     });
     var $sub_input = $("<input />", {
         "type": "email",
@@ -135,7 +135,7 @@ function get_email(container) {
     $sub_div.append($sub_btn);
     // add notice button 
     var $notice_div = $("<div />", {
-        "class": "notice-div form-group col-xs-6 col-xs-offset-3 col-md-6 col-md-offset-3",
+        "class": "notice-div form-group col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-3",
     });
     var $notice_label = $("<label />", {
         "class": "notice-label",
@@ -169,7 +169,7 @@ function show_owe_form(container, email) {
            "text": "Notice your friends they owe you money in a polite way."
        });
     var $front_div = $("<div />", {
-           "class": "front-div col-xs-6 col-xs-offset-3 col-md-6 col-md-offset-3"
+           "class": "front-div col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-3"
        });
     var $detect_form = $("<div />", {
            "class": "detect-form form-group"
