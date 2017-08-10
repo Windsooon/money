@@ -39,7 +39,7 @@
 .detect-money {
     color: white;
     font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 10vw;
+    font-size: 12vw;
     font-weight: 100;
     white-space: nowrap;
 }
@@ -146,4 +146,16 @@
 
 .front-div {
     margin-bottom: 50px;
+}
+
+@media only screen and (max-width: 767px) {
+    .detect-span {
+        font-size: 9vw;
+    }
+    .details-span {
+        font-size: 4.5vw;
+    }
+    .add-friend-span {
+        font-size: 7vw;
+    }
 }
