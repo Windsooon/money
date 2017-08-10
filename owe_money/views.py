@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 from django.http import HttpResponse
 from lend.models import Lend
@@ -17,6 +18,7 @@ def how(request):
     )
 
 
+@csrf_exempt
 def email(request):
     email = request.POST.get('email', None)
     if email:
@@ -26,6 +28,7 @@ def email(request):
         return HttpResponse(status=400)
 
 
+@csrf_exempt
 def sub_email(request):
     email = request.POST.get('email', None)
     if email:
@@ -38,6 +41,7 @@ def sub_email(request):
         return HttpResponse(status=400)
 
 
+@csrf_exempt
 def friends(request):
     lend = request.POST.get('lend', None)
     email = request.POST.get('email', None)
