@@ -131,7 +131,7 @@ function get_email(container) {
     });
     var $sub_btn = $("<button />", {
         "class": "sub-btn btn btn-primary btn-lg btn-block",
-        "text": "Get Email When You Owe Money"
+        "text": "Get Email when other friends remind you"
     });
 
     container.append($sub_div);
@@ -170,7 +170,7 @@ function show_owe_form(container, email) {
        });
     var $details_span = $("<span />", {
            "class": "details-span",
-           "text": "Notice your friends they owe you money in a polite way."
+           "text": "Politely remind your friends who owe you money."
        });
     var $front_div = $("<div />", {
            "class": "front-div col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-3"
@@ -189,7 +189,7 @@ function show_owe_form(container, email) {
        });
     var $input_email = $("<input />", {
            "type": "text",
-           "placeholder": "Enter His/Her Email    (Your friend will get email once they join)",
+           "placeholder": "Enter Their Email",
            "id": "add-email",
            "class": "form-control"
        });
@@ -219,7 +219,7 @@ function show_owe_form(container, email) {
        });
     var $twitter_a = $("<a />", {
            "href": "https://twitter.com/intent/tweet?button_hashtag=TwitterStories&hashtags=TBT,FF",
-           "text": "Tweet #TwitterStories"
+           "text": "Tweet #OWE"
        });
 
 
