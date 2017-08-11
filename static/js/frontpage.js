@@ -241,6 +241,11 @@ function show_owe_form(container, email) {
 
 function add_owe_friend(lend, email, money, reason) {
     var csrftoken = getCookie('csrftoken');
+    // todo money int
+    if (email.length == 0 | !isValidEmailAddress(email) | reason.length == 0) {
+        alert("Please complete the form.");
+        return false;
+    }
     $.ajax({
         url: "/friends/",
         type: "POST",
@@ -251,12 +256,19 @@ function add_owe_friend(lend, email, money, reason) {
                 $('.add-btn').prop('disabled', true);
             },
 		success:function(data){
-            $('.add-btn').text("Got it!");
+            $("#add-email").val("");
+            $("#add-money").val("");
+            $("#add-reason").val("");
+            var $add_more_friends = $("<span />", {
+                   "id": "already-add-friend",
+                   "text": "Added " + data["email"] + " owe $" + data["money"],
+               });
+            $(".front-div").append($add_more_friends);
         },
         error: function(data) {
         },
         complete: function() {
-            $('.add-btn').prop('disabled', false);
+            $(".add-btn").prop("disabled", false);
         }
     });
 }

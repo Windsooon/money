@@ -16,6 +16,6 @@ class OweSerializer(serializers.ModelSerializer):
         raw_email = obj.lend.email
         pre_email, domain = raw_email.split('@')
         if len(pre_email) > 3:
-            return pre_email[0:-3] + '*' * 4  + '@' + domain
+            return pre_email[0:-3] + '*' * 3  + '@' + domain
         else:
             return raw_email

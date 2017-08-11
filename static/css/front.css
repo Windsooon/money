@@ -133,11 +133,12 @@
 }
 
 .owe-reason {
-    color: #d4d4d4;
+    color: #fff392;
 }
 
 .owe-email {
     font-style: italic;
+    color: #d4d4d4;
 }
 
 .add-btn {
@@ -162,4 +163,16 @@
 
 .btn-div {
     margin-bottom: 50px;
+}
+
+#add-more-btn {
+    width: 50%;
+}
+
+#already-add-friend {
+    display: block;
+    font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 2vw;
+    font-weight: 200;
+    color: white;
 }

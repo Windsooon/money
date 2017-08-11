@@ -52,6 +52,10 @@ def friends(request):
         owe = Owe.objects.create(
             lend=lend, email=email,
             money=money, reason=reason)
-        return JsonResponse({'email': owe.email})
+        return JsonResponse({
+            'email': owe.email,
+            'money': owe.money,
+            'reason': owe.reason
+            })
     else:
         return HttpResponse(status=400)
