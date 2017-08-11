@@ -242,8 +242,16 @@ function show_owe_form(container, email) {
 function add_owe_friend(lend, email, money, reason) {
     var csrftoken = getCookie('csrftoken');
     // todo money int
-    if (email.length == 0 | !isValidEmailAddress(email) | reason.length == 0) {
-        alert("Please complete the form.");
+    if (email.length == 0 | !isValidEmailAddress(email)) {
+        alert("Please submit a correct email address."); 
+        return false;
+    }
+    if (reason.length == 0) {
+        alert("Please complete the form."); 
+        return false;
+    }
+    if (!(Math.floor(money) == money && $.isNumeric(money))) {
+        alert("Please enter an integer money.");
         return false;
     }
     $.ajax({
