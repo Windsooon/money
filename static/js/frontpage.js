@@ -218,8 +218,8 @@ function show_owe_form(container, email) {
            "value": email
        });
     var $twitter_a = $("<a />", {
-           "href": "https://twitter.com/intent/tweet?button_hashtag=TwitterStories&hashtags=TBT,FF",
-           "text": "Tweet #OWE"
+           "href": "https://twitter.com/intent/tweet?button_hashtag=DOIOWE&text=Please%20remind%20me%20if%20I%20owe%20you%20money%20on&url=https://www.doiowe.com&via=doiowe",
+           "text": "Share on Twitter #DOIOWE"
        });
 
 
@@ -251,7 +251,7 @@ function add_owe_friend(lend, email, money, reason) {
         return false;
     }
     if (!(Math.floor(money) == money && $.isNumeric(money))) {
-        alert("Please enter an integer money.");
+        alert("Please enter an integer value.");
         return false;
     }
     $.ajax({
