@@ -218,6 +218,7 @@ function show_owe_form(container, email) {
            "value": email
        });
     var $twitter_a = $("<a />", {
+           "id": "twitter-a",
            "href": "https://twitter.com/intent/tweet?button_hashtag=DOIOWE&text=Please%20remind%20me%20if%20I%20owe%20you%20money%20on&url=https://www.doiowe.com&via=doiowe",
            "text": "Share on Twitter #DOIOWE"
        });

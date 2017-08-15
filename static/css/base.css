@@ -73,3 +73,7 @@ pre {
 .navbar-brand {
     color: white !important;
 }
+
+#twitter-a {
+    text-decoration: underline;
+}
