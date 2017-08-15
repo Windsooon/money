@@ -4,7 +4,6 @@
 
 .intro {
     text-align: center;
-    padding-top: 100px;
     padding-bottom: 100px;
     background-color: white;
 }
@@ -17,4 +16,12 @@
 
 .icon-group {
     margin-bottom: 80px;
+}
+
+.works-gif-title {
+    padding-top: 0px;
+}
+
+.works-gif-video {
+    margin-bottom: 50px;
 }
