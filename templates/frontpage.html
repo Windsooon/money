@@ -8,51 +8,26 @@
 {% block title %}Who Owe You Money?{% endblock %} 
 
 {% block content %}
-<div class="nav-wrapper">
-  <nav class="navbar navbar-default base-navbar">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-button" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/">DO I OWE</a>
+<div class="front-container container">
+  <div class="front-row row">
+    <div class="front-wrapper">
+      <div class="title-div col-xs-8 col-xs-offset-2 col-md-8 col-md-offset-2">
+          <span class="detect-title">Do I Owe</span>
+          <span class="detect-span"></span>
+          <span class="details-span">Sometimes you just can't help forgetting that you owe your friends money. <br> Enter your email to check if someone has attempted to remind you.</span>
       </div>
-      <div id="nav-button" class="collapse navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li><a href="mailto:contact@doiowe.com?subject=Hello">Contact Us</a></li>
-        </ul>
-        <ul class="nav navbar-nav">
-          <li>
-            <a target="_blank" href="https://twitter.com/doiowe"><i class="fa fa-2x fa-twitter"></i> Follow on Twitter</a>
-          </li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav> <!-- end nav -->
-  <div class="front-container container">
-    <div class="front-row row">
-      <div class="front-wrapper">
-        <div class="title-div col-xs-8 col-xs-offset-2 col-md-8 col-md-offset-2">
-            <span class="detect-title">Do I Owe</span>
-            <span class="detect-span"></span>
-            <span class="details-span">Sometimes you just can't help forgetting that you owe your friends money. <br> Enter your email to check if someone has attempted to remind you.</span>
-        </div>
-        <div class="input-div col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-3">
-          <div class="form-group">
-            <input type="email" placeholder="your@email.com" id="check-email" class="form-control"/>
-          </div> <!-- end form-group -->
-        </div> <!-- end input-div -->
-        <div class="btn-div col-xs-8 col-xs-offset-2 col-md-8 col-md-offset-2">
-          <button class="check-btn btn btn-primary btn-lg col-xs-12 col-md-4 col-md-offset-2">Check</button>
-          <a href="/how/" class="btn btn-inverse btn-lg col-xs-12 col-md-4">How This Works</a>
-        </div> <!-- end btn-div -->
-      </div> <!-- end front-wrapper -->
-    </div> <!-- end front-row -->
-  </div> <!-- end front-container -->
-</div> <!-- end nav-wrapper -->
+      <div class="input-div col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-3">
+        <div class="form-group">
+          <input type="email" placeholder="your@email.com" id="check-email" class="form-control"/>
+        </div> <!-- end form-group -->
+      </div> <!-- end input-div -->
+      <div class="btn-div col-xs-8 col-xs-offset-2 col-md-8 col-md-offset-2">
+        <button class="check-btn btn btn-primary btn-lg col-xs-12 col-md-4 col-md-offset-2">Check</button>
+        <a href="/how/" class="btn btn-inverse btn-lg col-xs-12 col-md-4">How This Works</a>
+      </div> <!-- end btn-div -->
+    </div> <!-- end front-wrapper -->
+  </div> <!-- end front-row -->
+</div> <!-- end front-container -->
 {% endblock %}
 
 {% block extra_scripts %}
@@ -60,7 +35,7 @@
 <script>
     var typed3 = new Typed('.detect-span', {
         strings: [
-            '&#x261e; Jessica <i>100 dollars</i> ?', '&#x261e; Vincent <i>200 dollars</i> ?',
+            '&#x261e; Jessica <i>100 dollars</i>?', '&#x261e; Vincent <i>200 dollars</i>?',
         ],
         typeSpeed: 60,
         backSpeed: 40,
