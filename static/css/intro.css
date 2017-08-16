@@ -25,3 +25,13 @@
 .works-gif-video {
     margin-bottom: 50px;
 }
+
+#youtube-iframe {
+    width: 100%;
+    min-height: 400px;
+}
+
+.youtube-div {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
